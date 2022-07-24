@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
         return 0;
     }
 
-    for (int i = 0; i < argc - 1; i++) {
+    for (int i = 0; i < argc - 1; ++i) {
         array[i] = atoi(argv[i + 1]);
     }
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
     qsort(array, argc - 1, sizeof(int), compare);
     
     // Print array
-    for (int i = 0; i < argc - 1; i++) {
+    for (int i = 0; i < argc - 1; ++i) {
         printf("%d ", array[i]);
     }
 }
