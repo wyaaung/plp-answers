@@ -1,6 +1,8 @@
+// Below comments highlight the changed parts of the code
 #include <stdio.h>
 #include <stdlib.h>
 
+// this line typedef's 'unsigned long long int' to 'ull'
 typedef unsigned long long int ull;
 
 struct s_rectangle {
@@ -8,6 +10,7 @@ struct s_rectangle {
     ull length;
 };
 
+// this line typedef's 'struct s_rectangle' to 'rectangle'
 typedef struct s_rectangle rectangle;
 
 void print_rectangle(rectangle r) {
@@ -15,6 +18,7 @@ void print_rectangle(rectangle r) {
 }
 
 int main(int argc, char **argv) {
+    // we can replace the original types with new typedef'd aliases
     rectangle r;
     ull width;
     ull length;
@@ -31,3 +35,6 @@ int main(int argc, char **argv) {
 
     return 0;
 }
+// Run the below command to check answers; The one on github is outdated
+// Make sure you're in the same directory as this file when running the command
+// check50 -l --log olivierpierre/comp26020-problems/2021-2022/week2-c-basics/10-typedef
