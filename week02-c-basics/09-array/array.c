@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
     // print error and exit if that is the case
     if (argc > 11) {
         printf("Too many arguments!");
-        return 0;
+        return -1;
     }
     // declare the array we will store the arguments in
     // the array will store only the number of arguments
