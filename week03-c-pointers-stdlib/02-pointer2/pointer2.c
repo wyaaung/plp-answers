@@ -1,5 +1,7 @@
+// below comments highlight the changed parts of code
 #include <stdio.h>
 
+/* Typedef struct forward declaration for the pointer member */
 typedef struct s_list_member list_member;
 
 typedef struct s_list_member {
@@ -14,7 +16,11 @@ int main(int argc, char **argv){
     lm2.value = 2; lm2.next = &lm3;
     lm3.value = 3; lm3.next = 0x0;
 
+    // lm3.value can also be called as lm1.next->next->value
     printf("third member value is: %d\n", lm1.next->next->value);
 
     return 0;
 }
+// Run the below command to check answers; The one on github is outdated
+// Make sure you're in the same directory as this file when running the command
+// check50 -l --log olivierpierre/comp26020-problems/2021-2022/week3-c-pointers-stdlib/02-pointer2
