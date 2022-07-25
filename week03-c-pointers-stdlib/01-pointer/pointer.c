@@ -1,7 +1,10 @@
+// below comments highlight the changed parts of code
 #include <stdio.h>
 #include <stdlib.h>
 
+// function takes pointers to int values as argument
 int add(int *a, int *b){
+    // add the values pointed by each pointers
     return *a + *b;
 }
 
@@ -14,3 +17,6 @@ int main(int argc, char **argv){
     }
     return 0;
 }
+// Run the below command to check answers; The one on github is outdated
+// Make sure you're in the same directory as this file when running the command
+// check50 -l --log olivierpierre/comp26020-problems/2021-2022/week3-c-pointers-stdlib/01-pointer
