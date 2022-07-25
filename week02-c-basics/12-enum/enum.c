@@ -1,5 +1,7 @@
+// below comments highlight changes made to the provided code
 #include <stdio.h>
 
+// new enum - each item represents a number from 0~6
 enum day {
     MONDAY,
     TUESDAY,
@@ -12,10 +14,13 @@ enum day {
 
 
 int main(int argc, char **argv) {
+    // we use the type 'enum day'
+    // so 'WEDNESDAY' automatically gets matched to '2'
     enum day d = WEDNESDAY;
 
     printf("Today is: ");
     switch(d) {
+        // similarly to above, we convert each integer value with matching enum values
         case MONDAY:
             printf("Monday\n");
             break;
@@ -43,3 +48,6 @@ int main(int argc, char **argv) {
     }
     return 0;
 }
+// Run the below command to check answers; The one on github is outdated
+// Make sure you're in the same directory as this file when running the command
+// check50 -l --log olivierpierre/comp26020-problems/2021-2022/week2-c-basics/12-enum
