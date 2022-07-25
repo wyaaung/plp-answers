@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
     int array[argc - 1];
 
     // we convert each argument into integer, and insert them into the array
-    for (int i = 0; i < argc - 1; ++i) {
+    for (int i = 0; i < argc - 1; i++) {
         // we use argv[i+1] since argv[0] is just the program name
         array[i] = atoi(argv[i + 1]);
     }
@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
 
     // print each item in array, inserting a space between each item
     // these are all printed in the same line
-    for (int i = 0; i < argc - 1; ++i) {
+    for (int i = 0; i < argc - 1; i++) {
         printf("%d ", array[i]);
     }
     // print end of line character at the end

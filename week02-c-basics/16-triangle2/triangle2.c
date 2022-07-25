@@ -13,8 +13,8 @@ int main(int argc, char **argv){
 
     // print the top half of the triangle, including the middle
     // row goes from 1 to n
-    for (int row = 1; row <= n; ++row){
-        for (int col = 1; col <= row; ++col){
+    for (int row = 1; row <= n; row++){
+        for (int col = 1; col <= row; col++){
             printf("*");
         }
         printf("\n");
@@ -22,8 +22,8 @@ int main(int argc, char **argv){
 
     // print the bottom half of the triangle, excluding the middle
     // row goes from n-1 to 1
-    for (int row = n - 1; row >= 1; --row){
-        for (int col = 1; col <= row; ++col){
+    for (int row = n - 1; row >= 1; row--){
+        for (int col = 1; col <= row; col++){
             printf("*");
         }
         printf("\n");

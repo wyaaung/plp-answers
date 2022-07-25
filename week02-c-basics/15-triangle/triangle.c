@@ -7,9 +7,9 @@ int main(int argc, char **argv){
     int no_of_rows = atoi(argv[1]);
 
     // for each row
-    for (int row = 1; row <= no_of_rows; ++row){
+    for (int row = 1; row <= no_of_rows; row++){
         // print * time current row number (1~no_of_rows)
-        for (int col = 1; col <= row; ++col){
+        for (int col = 1; col <= row; col++){
             printf("*");
         }
         // print newline character at end of row

@@ -12,12 +12,12 @@ int main(int argc, char **argv){
     int array[argc - 1];
 
     // insert each argument into array, by converting each to integer
-    for (int i = 0; i < argc - 1; ++i) {
+    for (int i = 0; i < argc - 1; i++) {
         array[i] = atoi(argv[i + 1]);
     }
 
     // for each item in array, print if item is even or odd
-    for (int i = 0; i < argc - 1; ++i) {
+    for (int i = 0; i < argc - 1; i++) {
         if (array[i] % 2 == 0){
             printf("%d is even\n", array[i]);
         }else {
