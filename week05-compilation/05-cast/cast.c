@@ -8,7 +8,29 @@ typedef enum {
 
 void array_print(void *ptr, int size, array_type type) {
     /* complete here */
-}
+    printf("[");
+    switch (type)
+        {
+        case INT:
+            for (int i = 0; i < size - 1; i++){
+                printf("%d, ", ( (int *) ptr)[i]);
+            }
+            printf("%d]\n", ( (int *) ptr)[size - 1]);
+            break;
+        case CHAR:
+            for (int i = 0; i < size - 1; i++){
+                printf("%c, ", ( (char *) ptr)[i]);
+            }
+            printf("%c]\n", ( (char *) ptr)[size - 1]);
+            break;
+        case FLOAT:
+            for (int i = 0; i < size - 1; i++){
+                printf("%.6f, ", ( (float *) ptr)[i]);
+            }
+            printf("%.6f]\n", ( (float *) ptr)[size - 1]);
+            break;
+        }
+    }
 
 int main(int argc, char **argv) {
     int int_tab[3] = {1, 2, 3};

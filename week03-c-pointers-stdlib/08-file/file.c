@@ -129,4 +129,4 @@ void delete(char *string, char *word){
 }
 // Run the below command to check answers; The one on github is outdated
 // Make sure you're in the same directory as this file when running the command
-// check50 -l --log olivierpierre/comp26020-problems/2022-2023/week3-c-pointers-stdlib/08-file
+// check50 -l --log olivierpierre/comp26020-problems/2021-2022/week3-c-pointers-stdlib/08-file
