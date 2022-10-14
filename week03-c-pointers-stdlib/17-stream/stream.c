@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+// CODE IS IDENTICAL TO 08-file OUTSIDE OF MAIN
 
 // declare constant MAX_SIZE as 100
 #define MAX_SIZE 100
@@ -40,6 +41,8 @@ int main(int argc, char **argv){
     // implementation is below
     delete(file_contents, w);
     // create new file with given filenale + "-processed" as filename
+    // use fopen instead of open - we change the permission to simply "w"
+    // instead of int, use FILE*
     FILE *fd1 = fopen(strcat(f,"-processed"), "w");
     if (!fd1){
         printf("Error with open\n");
@@ -47,11 +50,15 @@ int main(int argc, char **argv){
     }
 
     // write the modified string into the new file
+    // we need to specify the length of each item and the number of each item
+    // treat each char as item (1 byte), and there are strlen(file_contents) chars
     if(fwrite(file_contents, 1, strlen(file_contents), fd1) != strlen(file_contents)) {
         printf("issue writing\n");
+        // use fclose instead of close
         fclose(fd1); return -1;
     }
     // close the file after writing to it
+    // use fclose instead of close
     fclose(fd1);
     // free the dynamically allocated memory before exiting
     free(file_contents);

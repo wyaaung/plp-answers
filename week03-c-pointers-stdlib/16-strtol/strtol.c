@@ -25,15 +25,21 @@ int get_string(char *buf, int size) {
     return 0;
 }
 int convert_and_print(char *buf) {
+    // for use in detecting endpoint of string in strtol()
     char *endptr;
+    // use strtol instead of atoi, add &endptr to store endpoint of string
+    // 10 specifies base of resulting number
     int result = strtol(buf, &endptr, 10);
 
+    // if string is invalid, endptr returns something that's not \0
     if(*endptr != '\0') {
         printf("invalid string\n");
     }
+    // if errno == ERANGE, there is an under/overflow error
     else if(errno == ERANGE) {
         printf("under/overflow\n");
     }
+    // if none of above errors occur, the string should be correctly converted
     else {
         printf("you have entered: %d\n", result);
     }
