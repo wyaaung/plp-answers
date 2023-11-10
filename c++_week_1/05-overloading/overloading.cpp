@@ -4,26 +4,25 @@ using namespace std;
 
 class Complex {
     private:
-        int _real_part;
-        int _imaginary_part;
+        int real{0};
+        int imag{0};
 
     public:
+        Complex() = default;
         Complex(int real_part, int imaginary_part);
         int get_real_part();
         int get_imaginary_part();
 };
 
-Complex::Complex(int real_part, int imaginary_part) {
-    _real_part = real_part;
-    _imaginary_part = imaginary_part;
-}
+Complex::Complex(int real_part, int imaginary_part) 
+    : real{real_part}, imag{imaginary_part} {};
 
 int Complex::get_real_part() {
-    return _real_part;
+    return real;
 }
 
 int Complex::get_imaginary_part() {
-    return _imaginary_part;
+    return imag;
 }
 
 void add_and_print(Complex c1, Complex c2){
