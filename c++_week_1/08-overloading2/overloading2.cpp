@@ -1,4 +1,7 @@
+#include <stdio.h>
 #include <iostream>
+
+using namespace std;
 
 class Complex {
 private:
@@ -10,6 +13,8 @@ public:
     Complex(int real_part, int imaginary_part);
     int get_real_part();
     int get_imaginary_part();
+    Complex operator+(Complex const& complex);
+    friend ostream &operator<<(ostream &out, const Complex &c);
 };
 
 Complex::Complex(int real_part, int imaginary_part) 
@@ -25,11 +30,23 @@ int Complex::get_imaginary_part() {
 
 /* implement operator overrides here */
 
+Complex Complex::operator+(Complex const& obj) {
+    Complex result;
+    result.real = real + obj.real;
+    result.imag = imag + obj.imag;
+    return result;
+}
+
+ostream & operator << (ostream &out, const Complex &c) {
+    out << '(' << c.real << '+' << c.imag << "i)";
+    return out;
+}
+
 int main(int argc, char **argv) {
     Complex c1(4, 5);
     Complex c2(9, 11);
 
-    std::cout << c1 + c2 << "\n"; // should print (13+16i)
+    cout << c1 + c2 << "\n"; // should print (13+16i)
 
     return 0;
 }
