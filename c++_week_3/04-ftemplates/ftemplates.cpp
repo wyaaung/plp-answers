@@ -33,10 +33,7 @@ std::ostream& operator<<(std::ostream& out, Complex c) {
     return std::cout << "(" << c.get_real_part() << "+" << c.get_imaginary_part() << "i)";
 }
 
-template <typename T>
-void add_and_print(T c1, T c2) {
-    std::cout << c1 << " + " << c2 << " = " << c1 + c2 << "\n";
-}
+auto add_and_print = [](auto c1, auto c2) { std::cout << c1 << " + " << c2 << " = " << c1 + c2 << "\n"; };
 
 int main(int argc, char **argv) {
     Complex c1(4, 5);
