@@ -38,7 +38,7 @@ void add_and_print(int i1, int i2){
 }
 
 void add_and_print(double d1, double d2){
-    printf("%.6f + %.6f = %.6f", d1, d2, d1 + d2);
+    printf("%.1f + %.1f = %.6f", d1, d2, d1 + d2);
 }
 
 int main(int argc, char **argv) {
