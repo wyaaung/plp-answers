@@ -10,7 +10,7 @@ public:
     Complex(int real_part, int imaginary_part);
     int get_real_part();
     int get_imaginary_part();
-    
+
     Complex operator+(Complex& other);
 };
 
@@ -33,16 +33,9 @@ std::ostream& operator<<(std::ostream& out, Complex c) {
     return std::cout << "(" << c.get_real_part() << "+" << c.get_imaginary_part() << "i)";
 }
 
-void add_and_print(Complex c1, Complex c2) {
+template <typename T>
+void add_and_print(T c1, T c2) {
     std::cout << c1 << " + " << c2 << " = " << c1 + c2 << "\n";
-}
-
-void add_and_print(int i1, int i2) {
-    std::cout << i1 << " + " << i2 << " = " << i1 + i2 << "\n";
-}
-
-void add_and_print(double d1, double d2) {
-    std::cout << d1 << " + " << d2 << " = " << d1 + d2 << "\n";
 }
 
 int main(int argc, char **argv) {

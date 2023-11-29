@@ -1,35 +1,36 @@
 #include <iostream>
 
+template<typename R, typename I>
 class Complex {
 private:
-    int real{0};
-    int imag{0};
+    R real{0};
+    I imag{0};
 
 public:
     Complex() = default;
-    Complex(int real_part, int imaginary_part);
-    int get_real_part();
-    int get_imaginary_part();
-    
+    Complex(R real_part, I imaginary_part);
+    R get_real_part();
+    I get_imaginary_part();
+
     Complex operator+(Complex& other);
 };
 
-Complex::Complex(int real_part, int imaginary_part) 
+template<typename R, typename I> Complex<R ,I>::Complex(R real_part, I imaginary_part) 
     : real{real_part}, imag{imaginary_part} {};
 
-int Complex::get_real_part() {
+template<typename R, typename I> R Complex<R ,I>::get_real_part() {
     return real;
 }
 
-int Complex::get_imaginary_part() {
+template<typename R, typename I> I Complex<R ,I>::get_imaginary_part() {
     return imag;
 }
 
-Complex Complex::operator+(Complex& other) {
+template<typename R, typename I> Complex<R ,I> Complex<R ,I>::operator+(Complex& other) {
     return Complex(real + other.real, imag + other.imag);
 }
 
-std::ostream& operator<<(std::ostream& out, Complex c) {
+template<typename R, typename I> std::ostream& operator<<(std::ostream& out, Complex<R, I> c) {
     return std::cout << "(" << c.get_real_part() << "+" << c.get_imaginary_part() << "i)";
 }
 

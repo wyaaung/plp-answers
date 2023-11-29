@@ -14,7 +14,6 @@ public:
     int get_real_part();
     int get_imaginary_part();
     Complex operator+(Complex const& complex);
-    friend ostream &operator<<(ostream &out, const Complex &c);
 };
 
 Complex::Complex(int real_part, int imaginary_part) 
@@ -30,15 +29,12 @@ int Complex::get_imaginary_part() {
 
 /* implement operator overrides here */
 
-Complex Complex::operator+(Complex const& obj) {
-    Complex result;
-    result.real = real + obj.real;
-    result.imag = imag + obj.imag;
-    return result;
+Complex Complex::operator+(Complex const& other) {
+    return Complex(real + other.real, imag + other.imag);
 }
 
-ostream & operator << (ostream &out, const Complex &c) {
-    out << '(' << c.real << '+' << c.imag << "i)";
+ostream & operator << (ostream &out, Complex c) {
+    out << '(' << c.get_real_part() << '+' << c.get_imaginary_part() << "i)";
     return out;
 }
 
